@@ -12,7 +12,7 @@ This repo provides two things:
    articles identified by PMIDs.
 
 The new dataset is available at
-[`src/pubmed/data/pubmed-new.zip`](https://github.com/mit-ccc/pubmed-dataset/blob/main/src/pubmed/data/pubmed-new.zip)
+[`src/pubmed/data/pubmed-new.zip`](https://github.com/mit-ccc/pubmed-dataset/blob/main/src/pubmed_dataset/data/pubmed-new.zip)
 and can also be accessed in python:
 ```
 import pubmed_dataset
