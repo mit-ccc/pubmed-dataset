@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools >= 59", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pubmed"
+version = "0.0.1"
+requires-python = ">=3.10"
+readme = "README.md"
+
+description = "Tools to build pubmed datasets, including the pubmed graph learning benchmark"
+
+authors = [
+    {name = "William Brannon", email = "wbrannon@mit.edu"}
+]
+
+license = {file = "LICENSE"}
+
+dependencies = [
+    'pandas>=2.2.1',
+    'requests>=2.31.0',
+    'tqdm',
+]
+
+[project.urls]
+homepage = "https://github.com/wwbrannon/pubmed-dataset"
+
+[project.scripts]
+pubmed-pull = "pubmed:main"
+
+[project.optional-dependencies]
+dev = ["pylint"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["pubmed"]
+namespaces = true
+
+[tool.setuptools.package-data]
+pubmed = ["data/*"]
+
