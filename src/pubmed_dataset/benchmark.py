@@ -14,7 +14,7 @@ def get_pubmed_dataset(path):
     GRAPH_PATH = 'pubmed-diabetes/data/Pubmed-Diabetes.DIRECTED.cites.tab'
     ZIP_PATH = 'pubmed-diabetes.zip'
 
-    with importlib.resources.open_binary('pubmed.data', ZIP_PATH) as zf_bytes:
+    with importlib.resources.open_binary('pubmed_dataset.data', ZIP_PATH) as zf_bytes:
         with zipfile.ZipFile(io.BytesIO(zf_bytes.read())) as zf:
             with io.TextIOWrapper(zf.open(NODE_PATH), encoding='utf-8') as f:
                 nodes = pd.read_csv(f, sep='\t', skiprows=1, low_memory=False)
@@ -46,7 +46,7 @@ def get_pubmed_dataset(path):
 def new_pubmed_dataset():
     ZIP_PATH = 'pubmed-new.zip'
 
-    with importlib.resources.open_binary('pubmed.data', ZIP_PATH) as zf_bytes:
+    with importlib.resources.open_binary('pubmed_dataset.data', ZIP_PATH) as zf_bytes:
         with zipfile.ZipFile(io.BytesIO(zf_bytes.read())) as zf:
             ret = {}
 

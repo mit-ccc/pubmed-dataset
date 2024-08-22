@@ -15,8 +15,8 @@ The new dataset is available at
 [`src/pubmed/data/pubmed-new.zip`](https://github.com/mit-ccc/pubmed-dataset/blob/main/src/pubmed/data/pubmed-new.zip)
 and can also be accessed in python:
 ```
-import pubmed
-dataset = pubmed.new_pubmed_dataset()
+import pubmed_dataset
+dataset = pubmed_dataset.new_pubmed_dataset()
 ```
 
 # Using the pull scripts
@@ -45,6 +45,17 @@ $ pubmed-pull --progress --infile my-pmids-list.txt output
 ```
 
 Output will be in the same format as for the built-in Pubmed benchmark list.
+
+## Script not found?
+If the `pubmed-pull` script isn't found or is hard to set up, this little
+wrapper script should work instead:
+```
+#!/usr/bin/env python3
+
+if __name__ == '__main__':
+    from pubmed_dataset import main
+    main()
+```
 
 # Citations
 If you use this dataset or the pull scripts, please cite our paper:
